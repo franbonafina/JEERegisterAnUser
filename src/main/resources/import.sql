@@ -1,0 +1,3 @@
+--
+-- File to load seed data into the database using SQL statements
+-- insert into Person (id, name, age, dni) values (0, 'John Smith', '28', '2125551212') 

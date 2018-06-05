@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>    
+    <parent>
+        <groupId>org.wildfly.bom</groupId>
+        <artifactId>wildfly</artifactId>
+        <version>13.0.0.Alpha5</version>
+        <relativePath />
+    </parent>
+    <artifactId>TechnicalTest</artifactId>
+    <groupId>com.MArvha</groupId>
+    <version>1.0.snapshot</version>
+    <packaging>war</packaging>
+    <name>Mavha technical test</name>
+    <description>a JavaEE Application for requirements of technical test Mavha</description>
+
+    <dependencies>     
+
+        <!--  the CDI API -->
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <scope>provided</scope>
+            <version>2.0</version>
+        </dependency>
+
+        <!-- Needed for running tests -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>4.12</version>            
+        </dependency>
+
+     
+
+        <!-- Annotation processor to generate the JPA-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <scope>provided</scope>
+            <version>5.3.1.Final</version>
+        </dependency>
+
+        <!-- Bean Validation -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+            <version>6.0.1.Final</version>
+        </dependency>            
+       
+        <!-- Import the JPA API -->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <scope>provided</scope>
+            <version>1.0.2.Final</version>
+        </dependency>
+        
+          <!-- Arquillian  to testJPA from JUnit-->
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <scope>test</scope>
+            <version>1.4.0.Final</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.arquillian.protocol</groupId>
+            <artifactId>arquillian-protocol-servlet</artifactId>
+            <scope>test</scope>
+            <version>1.4.0.Final</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.wildfly.arquillian</groupId>
+            <artifactId>wildfly-arquillian-container-managed</artifactId>
+            <version>2.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.core</groupId>
+            <artifactId>arquillian-core-api</artifactId>
+            <version>1.4.0.Final</version>
+            <scope>test</scope>
+         </dependency>
+     
+        <!-- Import the Common Annotations API (JSR-250), for JBOSS -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.2.Final</version>
+        </dependency>
+
+        <!-- Import the EJB API, for JBOSS -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.ejb</groupId>
+            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.1.Final</version>
+        </dependency>
+
+        <!-- Import the JSF API, fo JBOSS -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.faces</groupId>
+            <artifactId>jboss-jsf-api_2.2_spec</artifactId>
+            <scope>provided</scope>
+            <version>2.2.14</version>
+        </dependency>
+
+        <!-- Import the JAX-RS API, for JBOSS -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.ws.rs</groupId>
+            <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.spec.javax.xml.bind</groupId>
+            <artifactId>jboss-jaxb-api_2.2_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.5.Final</version>
+        </dependency>  
+    </dependencies>
+
+    <build>
+        <!-- Set the name of the WAR, used as the context root when the app is deployed -->
+        <finalName>${project.artifactId}</finalName>  
+        <plugins>            
+               <plugin>
+                   <groupId>org.wildfly.plugins</groupId>
+                   <artifactId>wildfly-maven-plugin</artifactId>
+                   <version>1.2.1.Final</version>
+               </plugin>           
+        </plugins> 
+        
+    </build>
+   
+</project>

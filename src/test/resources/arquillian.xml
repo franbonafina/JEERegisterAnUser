@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian
+    http://jboss.org/schema/arquillian/arquillian_1_0.xsd">    
+    <container qualifier="wildfly" default="true"> 
+       <configuration>
+           <property name="jbossHome">c:\Wildfly</property> <!-- {WildFly_HOME} -->
+           <property name="serverConfig">standalone-ee8.xml</property>
+           <property name="javaVmArguments">-Xrunjdwp:transport=dt_socket,address=5505,server=y,suspend=n -Xmx1024m -XX:MaxPermSize=256m</property>
+           <property name="managementAddress">localhost</property>
+           <property name="managementPort">9990</property>
+       </configuration>
+   </container>
+</arquillian>

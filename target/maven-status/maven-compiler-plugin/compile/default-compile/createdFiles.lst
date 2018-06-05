@@ -1,0 +1,8 @@
+com\MArvha\TechnicalTest\rest\PersonResourceRESTService.class
+com\MArvha\TechnicalTest\rest\JaxRsActivator.class
+com\MArvha\TechnicalTest\model\Person.class
+com\MArvha\TechnicalTest\data\PersonRepository.class
+com\MArvha\TechnicalTest\service\PersonRegistration.class
+com\MArvha\TechnicalTest\controller\PersonController.class
+com\MArvha\TechnicalTest\util\Resources.class
+com\MArvha\TechnicalTest\model\Person_.class

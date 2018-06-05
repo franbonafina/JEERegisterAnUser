@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+        <h1>Technical Test</h1>
+
+        <div>
+            <p>Solución en REST en JAX-WS que permite guardar una Entidad Persona</p>
+        </div>
+
+        <h:form id="reg">
+            <h2>Person Registration</h2>
+            <p>Please newers, register yourself .</p>
+            <h:panelGrid columns="3" columnClasses="titleCell">
+                <h:outputLabel for="name" value="Complete Name:" />
+                <h:inputText id="name" value="#{newPerson.name}" />
+                <h:message for="name" errorClass="invalid" />
+
+                <h:outputLabel for="age" value="Age:" />
+                <h:inputText id="age" value="#{newPerson.age}" />
+                <h:message for="age" errorClass="invalid" />
+
+                <h:outputLabel for="dni" value="DNI #:" />
+                <h:inputText id="dni"
+                    value="#{newPerson.dni}" />
+                <h:message for="dni" errorClass="invalid" />
+            </h:panelGrid>
+
+            <p>
+                <h:panelGrid columns="2">
+                    <h:commandButton id="register"
+                        action="#{personController.register}"
+                        value="Register" styleClass="register" />
+                    <h:messages styleClass="messages"
+                        errorClass="error" infoClass="valid"
+                        warnClass="warning" globalOnly="true" />
+                </h:panelGrid>
+            </p>
+        </h:form>
+        <h2>Members</h2>
+        <h:panelGroup rendered="#{empty members}">
+            <em>No registered members.</em>
+        </h:panelGroup>
+        <h:dataTable var="_person" value="#{members}"
+            rendered="#{not empty members}"
+            styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_person.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{_person.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Age</f:facet>
+                #{_person.age}
+            </h:column>
+            <h:column>
+                <f:facet name="header">DNI #</f:facet>
+                #{_person.dni}
+            </h:column>
+            <h:column>
+                <f:facet name="header">REST URL</f:facet>
+                <a
+                    href="#{request.contextPath}/rest/personas/#{_member.id}">/rest/personas/#{_member.id}</a>
+            </h:column>
+            <f:facet name="footer">
+            REST URL for all members: <a
+                    href="#{request.contextPath}/rest/personas">/rest/personas</a>
+            </f:facet>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
