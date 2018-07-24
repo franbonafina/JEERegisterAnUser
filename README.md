@@ -1,4 +1,4 @@
-# JEE ARQUITECHTURE PROJECT  
+# JEE ARCHITECTURE PROJECT  
 ### Features
 - Maven 3.5
 - WildFly Container
