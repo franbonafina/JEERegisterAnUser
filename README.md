@@ -1,9 +1,34 @@
-# Register New Person
-### JEE + RXRestFile
+# JEE PROJECT
+### Features
+- Maven 3.5
+- WildFly Container
+. Auth Role
+- Injection Dependencies 
+- JNDI .
+- DataSource -> hsqldb + mysql .
+- JPA . Hibernate
+- JSF
+- Rest Service -> JRXRest
+- Pom .
+
 <br></br>
 # CONFIGURATIONS : <br></br>
-#Maven 3.5<br></br>#JAva 1.8 (or 1.7)<br></br>
-### Set JBOSS_HOME(point to wildfly folder) Or set standoloneMav.. .xml  in Your WildFly/JBOSS and add module/org/hsqldb/main  
-(or add dataSource in standoloneMav..xml reference to another dataBase . Then put in MAvhaTecnicaltest-Ds its respective jndi )<br></br>
-#In the folder run mvn wildfly:deploy <br></br>
-## If test failed, test/MetaInf/arquilian.xml container<"widlfly">.. point to the path of the wildfly .
+### Clone the repo 
+### Configure WildFly to your Local environment
+ ## Main Option:
+   -Set or Create environment variable pointing to wildfly folder```export JBOSS_HOME = PATH/WildFLy```
+       Note: it depend on the s.o and your preferences to set environment variable .yyy
+    Then create an instance, via IDE or Console . So to have a wildfly instance running.   
+ Option 2:
+    -If u have your wildfly container running. 
+      Copy    ```standoloneMav.. .xml```  in standolone folder .
+      Copy -recursive ```module/org/hsqldb/main ```  in module folder .
+         Note:  if you want to point to another database, it's enought to add dataSource in ```standoloneMa...xml``` reference                 and put in MavhaTecnicaltest-Ds its respective jndi .
+          
+### Run :
+```mvn wildfly:deploy
+```
+## Possible Issue
+If test failed, inside the path 
+```test/MetaInf/arquilian.xml container<"widlfly">```
+point to the path of the wildfly .
