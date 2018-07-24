@@ -1,4 +1,4 @@
-# JavaRXRestFile (*MAvha Test) .	
+# Register New Person
 # Register new person JEE + Rest .
 <br></br>
 CONFIGURATIONS : <br></br>
