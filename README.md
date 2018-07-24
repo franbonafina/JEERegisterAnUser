@@ -1,4 +1,4 @@
-# JEE PROJECT
+# JEE ARQUITECHTURE PROJECT  
 ### Features
 - Maven 3.5
 - WildFly Container
@@ -13,10 +13,10 @@
 
 <br></br>
 # CONFIGURATIONS : <br></br>
-### Clone the repo 
-### Configure WildFly to your Local environment
- ## Main Option:
-   -Set or Create environment variable pointing to wildfly folder```export JBOSS_HOME = PATH/WildFLy```
+### -1) Clone the repo 
+### -2) Configure WildFly to your Local environment
+ ### Main Option:
+  | -Set or Create environment variable pointing to wildfly folder```export JBOSS_HOME = PATH/WildFLy```
        Note: it depend on the s.o and your preferences to set environment variable .yyy
     Then create an instance, via IDE or Console . So to have a wildfly instance running.   
  Option 2:
@@ -25,9 +25,8 @@
       Copy -recursive ```module/org/hsqldb/main ```  in module folder .
          Note:  if you want to point to another database, it's enought to add dataSource in ```standoloneMa...xml``` reference                 and put in MavhaTecnicaltest-Ds its respective jndi .
           
-### Run :
-```mvn wildfly:deploy
-```
+### Run :```mvn wildfly:deploy```
+
 ## Possible Issue
 If test failed, inside the path 
 ```test/MetaInf/arquilian.xml container<"widlfly">```
