@@ -1,5 +1,5 @@
 # Register New Person
-# JEE + RXRestFile)
+# JEE + RXRestFile
 <br></br>
 CONFIGURATIONS : <br></br>
 #Maven 3.5<br></br>#JAva 1.8 (or 1.7)<br></br>
