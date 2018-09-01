@@ -12,7 +12,8 @@
 - Pom .
 # CONFIGURATIONS :
 ### 1. Clone the repo 
-```git clone ..```
+```git clone franbonafina/registerAnUser-Rest```
+```cd registerAnUser-Rest```
 ### 2. Configure WildFly to your Local environment
     ### Main Option:
     -Set or Create environment variable pointing to wildfly folder```export JBOSS_HOME = PATH/WildFLy```
